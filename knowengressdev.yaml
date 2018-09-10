@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: knowengress
+  name: knowengressdev
   namespace: default
 spec:
   tls:
   - hosts:
     - dev.knoweng.org
-    secretName: knowssl-secret
+    secretName: knowdevssl-secret
   rules:
   - host: dev.knoweng.org
     http:
