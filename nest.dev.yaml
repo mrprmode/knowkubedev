@@ -11,11 +11,12 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "true"
     ingress.kubernetes.io/force-ssl-redirect: "true"
   name: nest-ingress
+  namespace: default
 spec:
   tls:
   - hosts:
     - dev.knoweng.org
-    secretName: nest-tls-secret
+    secretName: knowdevssl-secret
   rules:
   - host: dev.knoweng.org
     http:
