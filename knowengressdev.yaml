@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: knowengressdev
-  namespace: default
+  namespace: support
 spec:
   tls:
   - hosts:
