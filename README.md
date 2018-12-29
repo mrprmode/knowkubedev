@@ -21,7 +21,7 @@ Host master
 # AWS Console- Create EFS under master's VPC and cluster security group. Takes about 3 minutes
 
 # Bastion- Export EFS
-`export EFS_DNS=fs-1bf82802.efs.us-west-1.amazonaws.com`
+`export EFS_DNS={EFS_DNS_NAME}`
 
 # Bastion- Modify efs id, availability zone, and efs server
 `wget https://raw.githubusercontent.com/prkriz/knowkubedev/master/efs-provisioner.yaml`
