@@ -29,7 +29,7 @@ Host master
 `wget https://raw.githubusercontent.com/prkriz/knowkubedev/master/efs-provisioner.yaml`
 
 # Bastion- Run the KNOWENG_INIT_FILE
-`./knowcfnscript`
+`curl -s raw.githubusercontent.com/prkriz/knowkubedev/master/knowcfnscript.sh | sh`
 
 # Clean Resources/Stack
 ## Delete EFS mount targets and optionally, efs.
