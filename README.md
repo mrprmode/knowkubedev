@@ -16,6 +16,8 @@ Host master
     Port 22
     User ubuntu
     IdentityFile ~/.ssh/{keypair}.pem
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
 ```
 
 # AWS Console- Create EFS under master's VPC and cluster security group. Takes about 3 minutes
