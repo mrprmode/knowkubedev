@@ -4,7 +4,7 @@ divider_line="------------------------------------------------------------------
 echo
 
 echo $divider_line
-echo " Setting up KnowEnG-Platform K8S Cluster  | Roughly 20 mins "
+echo " Setting up KnowEnG-Platform K8S Cluster  | Roughly 25 mins "
 echo " Go do something more productive instead of staring at the screen :) "
 echo $divider_line
 echo
@@ -164,9 +164,9 @@ else
 fi
 
 echo $divider_line
-echo " Deploying KnowEnG pods | Takes about .... minutes"
+echo " Deploying KnowEnG pods | Takes about 15 minutes"
 echo $divider_line
-sleep 2
+sleep 15m
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
 if [ $? -eq 0 ]
 	then
@@ -198,7 +198,7 @@ fi
 
 
 echo $divider_line
-echo " Exposing Load Balancer "
+echo " Exposing Load Balancer | Takes about 2 mins "
 echo $divider_line
 sleep 2
 kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
