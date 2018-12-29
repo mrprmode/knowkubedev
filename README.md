@@ -18,7 +18,7 @@ Host master
     IdentityFile ~/.ssh/{keypair}.pem
 ```
 
-# AWS Console- Create EFS under master's VPC and cluster security group
+# AWS Console- Create EFS under master's VPC and cluster security group. Takes about 3 minutes
 
 # Bastion- Export EFS
 `export EFS_DNS=fs-1bf82802.efs.us-west-1.amazonaws.com`
