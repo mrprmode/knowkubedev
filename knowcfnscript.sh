@@ -164,14 +164,16 @@ else
 fi
 
 echo $divider_line
-echo " Deploying KnowEnG pods | Takes about 15 minutes"
+echo " Deploying KnowEnG pods "
 echo $divider_line
-sleep 15m
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
 if [ $? -eq 0 ]
 	then
 	echo
 	echo "*************** Success!! pods deployed ***************"
+	echo "*************** Bringing jobs up | Takes about 15 minutes ***************"
+	sleep 15m
+	echo "*************** Success!! jobs are up ***************"
 	sleep 2
 	echo
 else
