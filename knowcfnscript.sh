@@ -15,7 +15,7 @@ echo $divider_line
 echo
 sleep 2
 export KUBECONFIG=/home/ubuntu/kubeconfig && \
-	scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null master:/home/ubuntu/kubeconfig .
+	scp master:/home/ubuntu/kubeconfig .
 if [ $? -eq 0 ]
 	then
 	echo
