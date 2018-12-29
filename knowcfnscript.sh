@@ -235,5 +235,4 @@ fi
 echo $divider_line
 echo " Congratulations!! KnowEnG Platform IS READY TO ROLL. Thank You for your patience."
 echo $divider_line
-rm $0
 echo
