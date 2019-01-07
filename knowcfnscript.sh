@@ -20,7 +20,7 @@ export KUBECONFIG=/home/ubuntu/kubeconfig
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- kubectl authorized ***************"
+	echo " Success-- kubectl authorized "
 	sleep 2
 	echo
 else
@@ -40,7 +40,7 @@ sudo apt-get update && sudo apt-get install -y apt-transport-https && \
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- kubectl installed and configured ***************"
+	echo " Success-- kubectl installed and configured "
 	sleep 2
 	echo
 else
@@ -56,7 +56,7 @@ kubectl apply -f efs-provisioner.yaml
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- EFS provisioned ***************"
+	echo " Success-- EFS provisioned "
 	sleep 2
 	echo
 else
@@ -72,7 +72,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-incubator/external
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- EFS RBAC applied ***************"
+	echo " Success-- EFS RBAC applied "
 	sleep 2
 	echo
 else
@@ -88,7 +88,7 @@ kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/pvc
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- networks pvc created ***************"
+	echo " Success-- networks pvc created "
 	sleep 2
 	echo
 else
@@ -104,7 +104,7 @@ kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/pvc
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- postgres pvc created ***************"
+	echo " Success-- postgres pvc created "
 	sleep 2
 	echo
 else
@@ -120,7 +120,7 @@ kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/pvc
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- redis pvc created ***************"
+	echo " Success-- redis pvc created "
 	sleep 2
 	echo
 else
@@ -136,7 +136,7 @@ kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/pvc
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- userfiles pvc created ***************"
+	echo " Success-- userfiles pvc created "
 	sleep 2
 	echo
 else
@@ -156,7 +156,7 @@ ssh -t master 'sudo mkdir efs' && \
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- KnowNet seeded ***************"
+	echo " Success-- KnowNet seeded "
 	sleep 2
 	echo
 else
@@ -172,7 +172,7 @@ kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nes
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- pods RBAC applied ***************"
+	echo " Success-- pods RBAC applied "
 	sleep 2
 	echo
 else
@@ -189,7 +189,7 @@ sleep 20
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Success-- KnowEnG Pods Deployed ***************"
+	echo " Success-- KnowEnG Pods Deployed "
 	sleep 2
 	echo
 else
@@ -206,7 +206,7 @@ if [ $? -eq 0 ]
 	then
 	echo
 	sleep 2m
-	echo "*************** Success-- Load Balance Exposed ***************"
+	echo " Success-- Load Balance Exposed "
 	sleep 2
 	echo
 else
@@ -222,7 +222,7 @@ kubectl --namespace=default describe service nest-public-lb | grep "LoadBalancer
 if [ $? -eq 0 ]
 	then
 	echo
-	echo "*************** Use the lb URL ***************"
+	echo " Use the lb URL "
 	sleep 2
 	echo
 else
