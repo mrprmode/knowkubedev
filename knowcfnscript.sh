@@ -16,7 +16,7 @@ echo
 sleep 2
 echo 'KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/profile.d/kubeconfig.sh >> /dev/null
 scp master:/home/ubuntu/kubeconfig .
-source /etc/profile.d/kubeconfig.sh
+export KUBECONFIG=/home/ubuntu/kubeconfig
 if [ $? -eq 0 ]
 	then
 	echo
