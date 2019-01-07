@@ -181,7 +181,7 @@ else
 fi
 
 echo $divider_line
-echo " Deploying KnowEnG pods "
+echo " Deploying KnowEnG pods, takes 20 minutes. Go play with your cat :) "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
