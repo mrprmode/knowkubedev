@@ -164,11 +164,6 @@ else
 fi
 
 echo $divider_line
-echo " Deploying KnowEnG pods "
-echo $divider_line
-kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
-
-echo $divider_line
 echo " Pods RBAC "
 echo $divider_line
 sleep 2
@@ -184,7 +179,22 @@ else
 	exit
 fi
 
-
+echo $divider_line
+echo " Deploying KnowEnG pods "
+echo $divider_line
+sleep 2
+kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
+sleep 20
+if [ $? -eq 0 ]
+	then
+	echo
+	echo "*************** Success-- KnowEnG Pods Deployed ***************"
+	sleep 2
+	echo
+else
+	echo $exit_msg
+	exit
+fi
 
 echo $divider_line
 echo " Exposing Load Balancer | Takes about 2 mins "
