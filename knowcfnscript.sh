@@ -1,5 +1,5 @@
 #!/bin/bash
-exit_msg="*************** Sorry! Something went wrong. Please Delete the Stack and Try Again. ***************"
+exit_msg=" Sorry! Something went wrong. Please Delete the Stack and Try Again. "
 divider_line="--------------------------------------------------------------------------"
 echo
 
@@ -185,7 +185,7 @@ echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
-sleep 20
+sleep 20m
 if [ $? -eq 0 ]
 	then
 	echo
