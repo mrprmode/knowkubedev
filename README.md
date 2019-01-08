@@ -18,6 +18,7 @@ Host master
     IdentityFile ~/.ssh/{keypair}.pem
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null
+    ServerAliveInterval 60
 ```
 
 # AWS Console- Create EFS under master's VPC and cluster security group. Takes about 3 minutes
