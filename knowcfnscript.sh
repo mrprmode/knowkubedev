@@ -152,7 +152,7 @@ sleep 2
 ssh -t master 'sudo mkdir efs' && \
 	ssh -t master 'echo 'export EFS_DNS=$EFS_DNS' | sudo tee -a /etc/profile.d/efs.sh >> /dev/null' && \
 	ssh -t master "sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport $EFS_DNS:/ efs" && \
-	ssh -t master "sudo aws s3 cp --recursive s3://KnowNets/KN-20rep-1706/userKN-20rep-1706/ home/ubuntu/efs/$(sudo ls /home/ubuntu/efs/ | grep networks)/"
+	ssh -t master "sudo aws s3 cp --recursive s3://KnowNets/KN-20rep-1706/userKN-20rep-1706/ /home/ubuntu/efs/$(sudo ls /home/ubuntu/efs/ | grep networks)/"
 if [ $? -eq 0 ]
 	then
 	echo
