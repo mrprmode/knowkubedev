@@ -190,51 +190,16 @@ echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
 echo " Success-- KnowEnG Pods Deployed "
-sleep 2
-
-
-echo "--------------------------------------------------------------------------"
+sleep 4
 echo " Exposing Load Balancer "
-echo "--------------------------------------------------------------------------"
 sleep 2
 kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
-if [ $? -eq 0 ]
-	then
-	echo
-	sleep 2
-	echo " Success-- Load Balancer Exposed "
-	sleep 2
-	echo
-else
-	echo " Sorry! Something went wrong. Please Delete the Stack and Try Again. "
-	exit
-fi
-
-echo "--------------------------------------------------------------------------"
+echo " Success-- Load Balancer Exposed "
 echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
-echo "--------------------------------------------------------------------------"
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
 echo " Success-- KnowEnG Platform is almost ready "
 sleep 2
-echo
-
-echo "--------------------------------------------------------------------------"
 echo " Printing Load Balancer "
-echo "--------------------------------------------------------------------------"
-sleep 2
 kubectl --namespace=default describe service nest-public-lb | grep "LoadBalancer Ingress"
-if [ $? -eq 0 ]
-	then
-	echo
-	echo " Use the lb URL "
-	sleep 2
-	echo
-else
-	echo " Sorry! Something went wrong. Please Delete the Stack and Try Again. "
-	exit
-fi
-
-echo "--------------------------------------------------------------------------"
+echo " Use the lb URL "
 echo " Congratulations-- KnowEnG Platform IS READY TO ROLL. Thank You for your patience."
-echo "--------------------------------------------------------------------------"
-echo
