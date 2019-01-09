@@ -189,16 +189,9 @@ echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
-if [ $? -eq 0 ]
-	then
-	echo
-	echo " Success-- KnowEnG Pods Deployed "
-	sleep 2
-	echo
-else
-	echo $exit_msg
-	exit
-fi
+echo " Success-- KnowEnG Pods Deployed "
+sleep 2
+
 
 echo $divider_line
 echo " Exposing Load Balancer "
