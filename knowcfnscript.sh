@@ -151,7 +151,7 @@ echo $divider_line
 sleep 2
 #ssh -t master 'sudo mkdir efs'
 #ssh -t master 'sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport $EFS_DNS:/ efs'
-KNOW_NET_DIR=$(ssh -t master 'sudo find  efs/ -type d -name "efs-networks*"')
+KNOW_NET_DIR=$(ssh -t master 'sudo find efs/ -type d -name "efs-networks*"')
 echo $KNOW_NET_DIR
 #ssh -t master 'sudo aws s3 cp --recursive s3://KnowNets/KN-20rep-1706/userKN-20rep-1706/ $KNOW_NET_DIR/'
 if [ $? -eq 0 ]
