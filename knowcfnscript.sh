@@ -146,7 +146,7 @@ fi
 
 
 echo $divider_line
-echo " Seeding Knowledge Network | Takes about 5 minutes "
+echo " Seeding Knowledge Network | Takes about 5-10 minutes "
 echo $divider_line
 sleep 2
 ssh -t master "sudo mkdir efs"
@@ -182,7 +182,7 @@ else
 fi
 
 echo $divider_line
-echo " Deploying KnowEnG pods, takes 20 minutes. Go play with your cat :) "
+echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
@@ -199,7 +199,7 @@ else
 fi
 
 echo $divider_line
-echo " Exposing Load Balancer | Takes about 2 mins "
+echo " Exposing Load Balancer "
 echo $divider_line
 sleep 2
 kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
@@ -216,7 +216,7 @@ else
 fi
 
 echo $divider_line
-echo " Getting things Ready | Takes about 20 mins "
+echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
 echo $divider_line
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
 echo " Success-- KnowEnG Platform is almost ready "
