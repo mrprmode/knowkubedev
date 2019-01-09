@@ -193,9 +193,9 @@ echo " Success-- KnowEnG Pods Deployed "
 sleep 2
 
 
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 echo " Exposing Load Balancer "
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 sleep 2
 kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
 if [ $? -eq 0 ]
@@ -210,17 +210,17 @@ else
 	exit
 fi
 
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
 echo " Success-- KnowEnG Platform is almost ready "
 sleep 2
 echo
 
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 echo " Printing Load Balancer "
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 sleep 2
 kubectl --namespace=default describe service nest-public-lb | grep "LoadBalancer Ingress"
 if [ $? -eq 0 ]
@@ -234,7 +234,7 @@ else
 	exit
 fi
 
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 echo " Congratulations-- KnowEnG Platform IS READY TO ROLL. Thank You for your patience."
-echo $divider_line
+echo "--------------------------------------------------------------------------"
 echo
