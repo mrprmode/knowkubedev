@@ -186,7 +186,7 @@ echo " Deploying KnowEnG pods, takes 20 minutes. Go play with your cat :) "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
-sleep 20m
+sleep 2
 if [ $? -eq 0 ]
 	then
 	echo
@@ -206,14 +206,20 @@ kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80
 if [ $? -eq 0 ]
 	then
 	echo
-	sleep 2m
-	echo " Success-- Load Balance Exposed "
+	sleep 2
+	echo " Success-- Load Balancer Exposed "
 	sleep 2
 	echo
 else
 	echo $exit_msg
 	exit
 fi
+
+echo $divider_line
+echo " Getting things Ready | Takes about 20 mins "
+echo $divider_line
+i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
+echo " Success-- KnowEnG Platform is almost ready "
 
 echo $divider_line
 echo " Printing Load Balancer "
