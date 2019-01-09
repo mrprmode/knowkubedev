@@ -206,7 +206,7 @@ if [ $? -eq 0 ]
 	sleep 2
 	echo
 else
-	echo $exit_msg
+	echo " Sorry! Something went wrong. Please Delete the Stack and Try Again. "
 	exit
 fi
 
@@ -230,7 +230,7 @@ if [ $? -eq 0 ]
 	sleep 2
 	echo
 else
-	echo $exit_msg
+	echo " Sorry! Something went wrong. Please Delete the Stack and Try Again. "
 	exit
 fi
 
