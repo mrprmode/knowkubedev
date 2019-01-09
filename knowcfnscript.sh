@@ -222,6 +222,8 @@ echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
 echo $divider_line
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
 echo " Success-- KnowEnG Platform is almost ready "
+sleep 2
+echo
 
 echo $divider_line
 echo " Printing Load Balancer "
