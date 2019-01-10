@@ -149,7 +149,7 @@ fi
 
 ssh -T master << 'EOSSH'
 sudo mkdir efs
-sleep2
+sleep 2
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport $EFS_DNS:/ efs
 sleep 4
 KNOW_NET_DIR=$(sudo find efs/ -type d -name \"efs-networks*\")
