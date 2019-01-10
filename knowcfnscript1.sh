@@ -9,24 +9,6 @@ echo " Go do something more productive instead of staring at the screen :) "
 echo $divider_line
 echo
 sleep 2
-echo $divider_line
-echo " Authorizing kubectl "
-echo $divider_line
-echo
-sleep 2
-echo 'KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/profile.d/kubeconfig.sh >> /dev/null
-scp master:/home/ubuntu/kubeconfig .
-export KUBECONFIG=/home/ubuntu/kubeconfig
-if [ $? -eq 0 ]
-	then
-	echo
-	echo " Success-- kubectl authorized "
-	sleep 2
-	echo
-else
-	echo $exit_msg
-	exit
-fi
 
 echo $divider_line
 echo " Installing kubectl "
@@ -41,6 +23,25 @@ if [ $? -eq 0 ]
 	then
 	echo
 	echo " Success-- kubectl installed and configured "
+	sleep 2
+	echo
+else
+	echo $exit_msg
+	exit
+fi
+
+echo $divider_line
+echo " Authorizing kubectl "
+echo $divider_line
+echo
+sleep 2
+echo 'KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/profile.d/kubeconfig.sh >> /dev/null
+scp master:/home/ubuntu/kubeconfig .
+export KUBECONFIG=/home/ubuntu/kubeconfig
+if [ $? -eq 0 ]
+	then
+	echo
+	echo " Success-- kubectl authorized "
 	sleep 2
 	echo
 else
@@ -189,17 +190,8 @@ echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
-echo " Success-- KnowEnG Pods Deployed "
-sleep 4
-echo " Exposing Load Balancer "
-sleep 2
-kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
-echo " Success-- Load Balancer Exposed "
-echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
+sleep 3
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
-echo " Success-- KnowEnG Platform is almost ready "
-sleep 2
-echo " Printing Load Balancer "
+kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
 kubectl --namespace=default describe service nest-public-lb | grep "LoadBalancer Ingress"
-echo " Use the lb URL "
-echo " Congratulations-- KnowEnG Platform IS READY TO ROLL. Thank You for your patience."
+echo " Congratulations-- KnowEnG Platform IS READY TO ROLL. Thank You for your patience. "
