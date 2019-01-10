@@ -65,7 +65,6 @@ ssh -t master "sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,har
 sleep 5
 KNOW_NET_DIR=$(ssh -t master "sudo find efs/ -type d -name \"efs-networks*\"")
 sleep 2
-echo "$KNOW_NET_DIR/"
 ssh -t master "sudo aws s3 cp --recursive s3://KnowNets/KN-20rep-1706/userKN-20rep-1706/ $KNOW_NET_DIR/"
 echo "Done"
 
