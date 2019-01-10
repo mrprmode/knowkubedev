@@ -190,8 +190,10 @@ echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
 kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
+echo "finished"
 sleep 3
 echo " Success-- KnowEnG pods deployed "
+echo " Getting things ready, takes 20 minutes "
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
 kubectl expose --namespace=default deployment nest --type=LoadBalancer --port=80 --target-port=80 --name=nest-public-lb
 kubectl --namespace=default describe service nest-public-lb | grep "LoadBalancer Ingress"
