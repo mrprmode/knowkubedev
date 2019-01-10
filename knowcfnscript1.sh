@@ -60,9 +60,9 @@ echo
 echo " Seeding Knowledge Network | Takes about 5-10 minutes "
 sleep 2
 ssh -t master "sudo mkdir efs"
-sleep 2
+sleep 3
 ssh -t master "sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport $EFS_DNS:/ efs"
-sleep 4
+sleep 5
 KNOW_NET_DIR=$(ssh -t master "sudo find efs/ -type d -name \"efs-networks*\"")
 sleep 2
 echo "$KNOW_NET_DIR/"
