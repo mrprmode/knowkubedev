@@ -22,6 +22,7 @@ sudo apt-get update && sudo apt-get install -y apt-transport-https && \
 if [ $? -eq 0 ]
 	then
 	echo
+	kubectl version
 	echo " Success-- kubectl installed "
 	sleep 2
 	echo
@@ -41,6 +42,7 @@ export KUBECONFIG=/home/ubuntu/kubeconfig
 if [ $? -eq 0 ]
 	then
 	echo
+	kubectl version
 	echo " Success-- kubectl Configured "
 	sleep 2
 	echo
