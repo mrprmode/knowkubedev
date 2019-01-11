@@ -31,8 +31,8 @@ Host master
 
 # Bastion- Run the KNOWENG_INIT_FILE
 ```
-wget https://raw.githubusercontent.com/prkriz/knowkubedev/master/knowcfnscript.sh
-bash knowcfnscript.sh
+wget https://raw.githubusercontent.com/prkriz/knowkubedev/master/knowcfnscript3.sh
+sh knowcfnscript.sh
 ```
 
 # Clean Resources/Stack
