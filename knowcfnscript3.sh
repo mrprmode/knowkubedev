@@ -191,7 +191,7 @@ echo $divider_line
 echo " Deploying KnowEnG pods "
 echo $divider_line
 sleep 2
-kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.prod.yaml
+kubectl apply -f https://raw.githubusercontent.com/prkriz/knowkubedev/master/nest.cfn.yaml
 if [ $? -eq 0 ]
 	then
 	echo
