@@ -188,10 +188,10 @@ spec:
           value: "KnowEnG"
         - name: SEED_DATABASE
           value: "false"
-      # - name: NODE_LABEL_NAME
-      #   value: "pipelines_jobs"                 
-      # - name: NODE_LABEL_VALUE
-      #   value: "true"
+       - name: NODE_LABEL_NAME
+         value: "pipelines_jobs"                 
+       - name: NODE_LABEL_VALUE
+         value: "nodes"
         volumeMounts:
         - name: userfiles
           mountPath: "/userfiles"
