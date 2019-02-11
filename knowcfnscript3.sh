@@ -223,6 +223,7 @@ echo $divider_line
 echo " Getting things Ready | Takes about 20 mins. Go play with your cat :) "
 echo $divider_line
 i=20; while [ $i -gt 0 ]; do echo $i minute\(s\) remaining; i=`expr $i - 1`; sleep 60;  done
+kubectl label nodes $(kubectl get nodes -o=custom-columns=NAME:.metadata.name,SPEC:.spec.taints | grep none | awk '{print $1}') pipelines_jobs=true
 if [ $? -eq 0 ]
 	then
 	echo
