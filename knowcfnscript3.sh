@@ -37,7 +37,7 @@ echo $divider_line
 echo
 sleep 2
 echo 'export KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/environment >> /dev/null
-source /etc/environment
+. /etc/environment
 scp master:/home/ubuntu/kubeconfig .
 if [ $? -eq 0 ]
 	then
