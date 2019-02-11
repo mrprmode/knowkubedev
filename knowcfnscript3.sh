@@ -36,9 +36,9 @@ echo " Configuring kubectl "
 echo $divider_line
 echo
 sleep 2
-echo 'KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/profile.d/kubeconfig.sh >> /dev/null
+echo 'export KUBECONFIG=/home/ubuntu/kubeconfig' | sudo tee -a /etc/environment >> /dev/null
+source /etc/environment
 scp master:/home/ubuntu/kubeconfig .
-export KUBECONFIG=/home/ubuntu/kubeconfig
 if [ $? -eq 0 ]
 	then
 	echo
